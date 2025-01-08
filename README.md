@@ -14,23 +14,26 @@
 ## Project Structure
 
 ```
-GenePathwayPlot/
-├── README.md                     # Project overview and usage instructions
-├── LICENSE                       # MIT License file
+PathwayColorMapper/
+├── README.md                     # Documentation with project overview and usage instructions
+├── LICENSE.txt                   # MIT License file for the project
 ├── config/
-│   └── config.yaml               # Configuration file for color scales and settings
+│   └── config.yaml               # Configuration file defining color scales, ranges, and gradients
 ├── examples/
-│   ├── example_data.csv          # Example input gene expression data (CSV)
-│   ├── example_pathway.pptx      # Example PowerPoint pathway diagram
-│   ├── example_output.png        # Example output image
-├── output/                       # Output directory for generated files
-│   ├── colorbar_vertical.png     # Generated vertical colorbar
-│   ├── colorbar_horizontal.png   # Generated horizontal colorbar
-│   ├── example_output.pptx       # Example annotated PowerPoint file
+│   ├── example_data.csv          # Example gene expression data in CSV format (raw data)
+│   ├── example_data_scaled.csv   # Example gene expression data in CSV format (Z-score normalized data)
+│   ├── example_pathway.pptx      # Example PowerPoint file with a blank pathway diagram
+│   ├── example_output.png        # Example image output showing annotated pathway (raw data)
+│   ├── example_output_scaled.png # Example image output showing annotated pathway (scaled data)
+├── output/                       # Directory for all generated outputs
+│   ├── colorbar_vertical.png     # Generated vertical colorbar image
+│   ├── colorbar_horizontal.png   # Generated horizontal colorbar image
+│   ├── example_output.pptx       # Example annotated PowerPoint file (raw data)
+│   ├── example_output_scaled.pptx# Example annotated PowerPoint file (scaled data)
 ├── scripts/
-│   └── gene_pathway_plot.py      # Main script for pathway annotation
-├── requirements.txt              # Python dependencies
-├── .gitignore                    # Files and directories to ignore in version control
+│   └── gene_pathway_plot.py      # Main Python script to annotate pathways with color-coded data
+├── requirements.txt              # List of Python dependencies needed to run the project
+├── .gitignore                    # Specifies files and directories to ignore in version control
 ```
 
 ---
@@ -38,19 +41,23 @@ GenePathwayPlot/
 ## Installation
 
 ### Requirements
+
 - Python 3.8+
 - Libraries listed in `requirements.txt`.
 
 ### Steps
+
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/PathwayColorMapper.git
+   git clone https://github.com/kyoshimr/PathwayColorMapper.git
    ```
-2. Navigate to the directory:
+
+2. Navigate to the project directory:
    ```bash
    cd PathwayColorMapper
    ```
-3. Install dependencies:
+
+3. Install the required dependencies:
    ```bash
    pip install -r requirements.txt
    ```
@@ -60,6 +67,7 @@ GenePathwayPlot/
 ## Usage
 
 ### Input Data Format
+
 Prepare your data in a CSV or Excel file with the following format:
 
 | Gene | Value  |
@@ -72,6 +80,7 @@ Prepare your data in a CSV or Excel file with the following format:
 
 
 ### Steps to Generate Pathway Visualization
+
 1. Prepare your input files:
    - Gene expression data in CSV or Excel format (see `examples/example_data_scaled.csv`).
    - Pathway diagram in PowerPoint format (see `examples/example_pathway.pptx`).
@@ -87,11 +96,13 @@ Prepare your data in a CSV or Excel file with the following format:
 ## Example
 
 ### Input Pathway Diagram
+
 A blank or pre-designed pathway diagram in PowerPoint:
 
 ![Example Input](examples/example_input.png)
 
 ### Output Pathway Diagram
+
 Annotated pathway with a heatmap overlay:
 
 ![Example Output](examples/example_output_scaled.png)
@@ -99,14 +110,17 @@ Annotated pathway with a heatmap overlay:
 ---
 
 ## Example Data
+
 Sample input files are provided in the `examples/` directory to help you get started.
 
 ### Files
+
 - `examples/example_data_scaled.csv`: A CSV file containing sample gene expression data.
 - `examples/example_data_scaled.xlsx`: An Excel version of the same data.
 - `examples/example_pathway.pptx`: A blank PowerPoint pathway diagram.
 
 ### How to Use
+
 Run the script with the provided sample data:
 ```bash
 python scripts/pathway_color_mapper.py --input examples/example_data_scaled.csv --pathway examples/example_pathway.pptx --output output/example_output_scaled.pptx
@@ -148,14 +162,14 @@ Mapped pathway with example raw data:
 ---
 
 ## Dependencies
+
+- `pandas`
 - `matplotlib`
 - `python-pptx`
-- `pandas`
-- `openpyxl`
-- `numpy`
 - `pyyaml`
 
 Install them using:
+
 ```bash
 pip install -r requirements.txt
 ```
@@ -163,14 +177,17 @@ pip install -r requirements.txt
 ---
 
 ## Contributing
-We welcome contributions! If you have suggestions for improvements, encounter bugs, or want to add features, feel free to submit an issue or pull request.
+
+Contributions are welcome! If you have suggestions for improvements, encounter bugs, or want to add features, feel free to submit an issue or pull request.
 
 ---
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE.txt) file for details.
 
 ---
 
 ## Acknowledgements
+
 PathwayColorMapper was created to simplify the visualization of complex genomic datasets in a pathway context. Special thanks to the open-source community for making tools like `python-pptx` and `matplotlib` available for projects like this.
