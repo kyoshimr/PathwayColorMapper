@@ -1,0 +1,15 @@
+# カラースケールの設定（Zスコアか済みの値を入力とする場合）
+#color_scale:
+#  min_value: -2.0  # カラースケールの最小値
+#  max_value: 2.0   # カラースケールの最大値
+#  gradient:        # カラースケールの色
+#    - color: blue  # 負の値に対応
+#    - color: white # 中間値に対応
+#    - color: red   # 正の値に対応
+
+# カラースケールの設定（TPMなどの生の発現量などを入力とする場合）
+
+color_scale:
+  min_value: 0  # カラースケールの最小値
+  max_value: 2.0   # カラースケールの最大値
+  gradient:  viridis      # カラースケールの色
